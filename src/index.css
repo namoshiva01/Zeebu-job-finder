@@ -16,42 +16,36 @@
   body {
     @apply font-sans bg-[#050505] text-white selection:bg-primary selection:text-white;
     -webkit-font-smoothing: antialiased;
-    background-image: 
-      radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.25) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(0, 240, 255, 0.15) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, rgba(0, 102, 255, 0.1) 0px, transparent 50%);
-    background-attachment: scroll;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white px-8 py-4 rounded-full font-bold hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,102,255,0.3)] hover:shadow-[0_0_30px_rgba(0,102,255,0.5)];
+    @apply bg-[#0066FF] text-white px-8 py-4 rounded-full font-bold transition-all flex items-center justify-center gap-2 shadow-lg hover:brightness-110 active:scale-95;
   }
   
   .btn-glass {
-    @apply bg-glass backdrop-blur-md border border-glass-border text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2;
+    @apply bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2;
   }
 
   .glass-card {
-    @apply bg-glass backdrop-blur-xl border border-glass-border rounded-3xl p-8;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8;
   }
 
   .section-padding {
     @apply py-20 md:py-32 px-6 max-w-7xl mx-auto;
   }
-
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50;
-  }
-
-  .text-accent-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
-  }
 }
 
-.mesh-gradient {
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-color: #050505;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.2) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(0, 240, 255, 0.1) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(0, 102, 255, 0.05) 0px, transparent 50%);
 }
 
 .animate-float {
