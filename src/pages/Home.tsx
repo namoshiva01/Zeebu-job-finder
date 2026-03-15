@@ -1,11 +1,10 @@
-import { motion } from 'motion/react';
 import { Download, Bell, Smartphone, ArrowRight, Zap, Globe, Users, ShieldCheck } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { APP_NAME, PLAY_STORE_URL } from '../constants';
 
 export const Home = () => {
   return (
-    <div className="mesh-gradient min-h-screen relative">
+    <div className="min-h-screen relative">
       <SEO 
         title={`${APP_NAME} - Premium Government Job Alerts`}
         description={`Experience the future of job hunting with ${APP_NAME}. Fast, reliable, and beautifully designed for the modern job seeker.`}
@@ -14,15 +13,10 @@ export const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center pt-32 pb-20 z-10">
         <div className="section-padding text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md"
-          >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-sm font-medium text-white/70 tracking-wider uppercase">Trusted by 1M+ Job Seekers</span>
-          </motion.div>
+          </div>
 
           <h1 className="text-5xl md:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight text-white">
             Find Your Future <br />
@@ -48,24 +42,8 @@ export const Home = () => {
 
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-              rotate: [0, 90, 0]
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-1/2 -left-1/4 w-[1000px] h-[1000px] bg-primary/20 rounded-full blur-[120px]" 
-          />
-          <motion.div 
-            animate={{ 
-              scale: [1.2, 1, 1.2],
-              opacity: [0.2, 0.4, 0.2],
-              rotate: [0, -90, 0]
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute -bottom-1/2 -right-1/4 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[120px]" 
-          />
+          <div className="absolute -top-1/2 -left-1/4 w-[1000px] h-[1000px] bg-primary/20 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute -bottom-1/2 -right-1/4 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '-3s' }} />
         </div>
       </section>
 
@@ -106,10 +84,7 @@ export const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Large Feature */}
-          <motion.div 
-            whileHover={{ y: -10 }}
-            className="md:col-span-2 glass-card group overflow-hidden relative"
-          >
+          <div className="md:col-span-2 glass-card group overflow-hidden relative">
             <div className="relative z-10">
               <div className="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center mb-8 text-primary">
                 <Bell size={32} />
@@ -121,13 +96,10 @@ export const Home = () => {
               </p>
             </div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors" />
-          </motion.div>
+          </div>
 
           {/* Small Feature */}
-          <motion.div 
-            whileHover={{ y: -10 }}
-            className="glass-card group"
-          >
+          <div className="glass-card group">
             <div className="w-14 h-14 bg-accent/20 rounded-2xl flex items-center justify-center mb-8 text-accent">
               <ShieldCheck size={32} />
             </div>
@@ -135,13 +107,10 @@ export const Home = () => {
             <p className="text-white/50">
               Every listing is cross-checked with official government sources.
             </p>
-          </motion.div>
+          </div>
 
           {/* Small Feature */}
-          <motion.div 
-            whileHover={{ y: -10 }}
-            className="glass-card group"
-          >
+          <div className="glass-card group">
             <div className="w-14 h-14 bg-blue-400/20 rounded-2xl flex items-center justify-center mb-8 text-blue-400">
               <Smartphone size={32} />
             </div>
@@ -149,13 +118,10 @@ export const Home = () => {
             <p className="text-white/50">
               A buttery smooth experience optimized for all Android devices.
             </p>
-          </motion.div>
+          </div>
 
           {/* Large Feature */}
-          <motion.div 
-            whileHover={{ y: -10 }}
-            className="md:col-span-2 glass-card group relative overflow-hidden"
-          >
+          <div className="md:col-span-2 glass-card group relative overflow-hidden">
             <div className="relative z-10">
               <div className="w-14 h-14 bg-emerald-400/20 rounded-2xl flex items-center justify-center mb-8 text-emerald-400">
                 <Zap size={32} />
@@ -167,18 +133,13 @@ export const Home = () => {
               </p>
             </div>
             <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-400/5 rounded-full blur-3xl group-hover:bg-emerald-400/10 transition-colors" />
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="section-padding relative">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="glass-card text-center py-20 relative overflow-hidden"
-        >
+        <div className="glass-card text-center py-20 relative overflow-hidden">
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">Ready to start your <br /> career journey?</h2>
             <p className="text-white/50 text-xl mb-12 max-w-xl mx-auto">
@@ -194,7 +155,7 @@ export const Home = () => {
           
           {/* Background Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/10 blur-[120px] pointer-events-none" />
-        </motion.div>
+        </div>
       </section>
     </div>
   );

@@ -8,7 +8,6 @@ import { Contact } from './pages/Contact';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsAndConditions } from './pages/TermsAndConditions';
 import { PLAY_STORE_URL } from './constants';
-import { motion, AnimatePresence } from 'motion/react';
 import { X, Download } from 'lucide-react';
 
 // Scroll to top on route change
@@ -50,14 +49,8 @@ const AppInstallPopup = () => {
   if (!show) return null;
 
   return (
-    <AnimatePresence>
-      <motion.div 
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 100, opacity: 0 }}
-        className="fixed bottom-24 md:bottom-8 left-4 right-4 md:left-auto md:right-8 z-[60] max-w-sm glass-card p-6 shadow-2xl"
-      >
-        <button 
+    <div className="fixed bottom-24 md:bottom-8 left-4 right-4 md:left-auto md:right-8 z-[60] max-w-sm glass-card p-6 shadow-2xl">
+      <button 
           onClick={() => {
             setShow(false);
             localStorage.setItem('popupDismissed', 'true');
@@ -84,8 +77,7 @@ const AppInstallPopup = () => {
             </a>
           </div>
         </div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
   );
 };
 
