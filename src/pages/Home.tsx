@@ -5,6 +5,9 @@ import { APP_NAME, PLAY_STORE_URL } from '../constants';
 export const Home = () => {
   return (
     <div className="min-h-screen relative bg-[#050505]">
+      <h1 style={{color: "red", fontSize: "60px", textAlign: "center"}}>
+TEST HOME COMPONENT
+</h1>
       <div className="bg-mesh" />
       <SEO 
         title={`${APP_NAME} - Premium Government Job Alerts`}
