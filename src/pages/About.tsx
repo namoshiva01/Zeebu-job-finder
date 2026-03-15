@@ -1,85 +1,116 @@
 import { motion } from 'motion/react';
-import { Bell, GraduationCap, Calendar, FileText, Search } from 'lucide-react';
+import { Bell, GraduationCap, Calendar, FileText, Search, Target, Heart, Award } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { APP_NAME } from '../constants';
 
 export const About = () => {
   return (
-    <div className="bg-white">
+    <div className="mesh-gradient min-h-screen pt-24">
       <SEO 
         title={`About Us - ${APP_NAME}`}
         description={`${APP_NAME} is a smart mobile application designed to help job seekers easily find the latest government job notifications across India.`}
       />
 
-      <section className="bg-secondary">
-        <div className="section-padding text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
-          >
-            About {APP_NAME}
-          </motion.h1>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            {APP_NAME} is a smart mobile application designed to help job seekers easily find the latest government job notifications across India.
+      <section className="section-padding text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 tracking-tight">
+            Our Story. <br />
+            <span className="text-accent-gradient">Our Mission.</span>
+          </h1>
+          <p className="text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
+            {APP_NAME} was born out of a simple observation: finding government job notifications 
+            shouldn't be a full-time job in itself. We built a platform that brings clarity 
+            to the complex world of public sector opportunities.
           </p>
-        </div>
+        </motion.div>
       </section>
 
-      <section className="bg-white">
-        <div className="section-padding container-tight">
-          <h2 className="text-3xl font-bold mb-6 text-center">Our Mission</h2>
-          <p className="text-slate-600 mb-6 leading-relaxed text-lg text-center">
-            The app collects and organizes information about central and state government jobs in one place so users can quickly stay updated with new opportunities.
-          </p>
-          <p className="text-slate-600 mb-6 leading-relaxed text-lg text-center">
-            Our goal is to simplify the job search process for students, graduates, and job aspirants by providing accurate and timely government job information.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-secondary">
-        <div className="section-padding">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold">Key Features</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: <Bell />, 
-                title: "Latest Government Job Notifications", 
-                desc: "Get updates about the newest central and state government job openings." 
-              },
-              { 
-                icon: <GraduationCap />, 
-                title: "Qualification-Based Job Search", 
-                desc: "Find jobs based on your education level such as 10th Pass, 12th Pass, Diploma, Degree, B.Tech, and more." 
-              },
-              { 
-                icon: <Calendar />, 
-                title: "Important Dates", 
-                desc: "Stay informed about application start dates, last dates, exam schedules, and other important deadlines." 
-              },
-              { 
-                icon: <FileText />, 
-                title: "Official Notification Links", 
-                desc: "Access official government notification PDFs and application links directly from the app." 
-              },
-              { 
-                icon: <Search />, 
-                title: "Easy Search & Filters", 
-                desc: "Search and filter jobs by state, qualification, department, and job category." 
-              }
-            ].map((v, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center mb-6">
-                  {v.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{v.title}</h3>
-                <p className="text-slate-600">{v.desc}</p>
+      <section className="section-padding">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { 
+              icon: <Target className="text-primary" />, 
+              title: "Precision", 
+              desc: "We filter through thousands of notifications to bring you only what matters to you." 
+            },
+            { 
+              icon: <Heart className="text-accent" />, 
+              title: "User First", 
+              desc: "Every feature we build is designed to make your job search smoother and faster." 
+            },
+            { 
+              icon: <Award className="text-emerald-400" />, 
+              title: "Trust", 
+              desc: "100% verified data from official government sources. No rumors, just facts." 
+            }
+          ].map((item, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="glass-card text-center"
+            >
+              <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                {item.icon}
               </div>
-            ))}
-          </div>
+              <h3 className="text-2xl font-display font-bold mb-4">{item.title}</h3>
+              <p className="text-white/40 leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-padding bg-white/[0.02] border-y border-white/5">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Key Features</h2>
+          <p className="text-white/50 text-lg">What makes {APP_NAME} the #1 choice for aspirants.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { 
+              icon: <Bell />, 
+              title: "Instant Notifications", 
+              desc: "Get updates about the newest central and state government job openings." 
+            },
+            { 
+              icon: <GraduationCap />, 
+              title: "Qualification Matching", 
+              desc: "Find jobs based on your education level from 10th Pass to B.Tech." 
+            },
+            { 
+              icon: <Calendar />, 
+              title: "Smart Deadlines", 
+              desc: "Stay informed about application start dates, last dates, and exam schedules." 
+            },
+            { 
+              icon: <FileText />, 
+              title: "Official Docs", 
+              desc: "Access official notification PDFs and application links directly." 
+            },
+            { 
+              icon: <Search />, 
+              title: "Advanced Search", 
+              desc: "Filter jobs by state, qualification, department, and category." 
+            }
+          ].map((v, i) => (
+            <motion.div 
+              key={i}
+              whileHover={{ y: -5 }}
+              className="glass-card"
+            >
+              <div className="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center mb-6">
+                {v.icon}
+              </div>
+              <h3 className="text-xl font-display font-bold mb-3">{v.title}</h3>
+              <p className="text-white/40">{v.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
     </div>
