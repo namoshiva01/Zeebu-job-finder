@@ -30,7 +30,7 @@ export const Footer = () => {
         <div>
           <h4 className="font-bold text-lg mb-4">Support</h4>
           <ul className="space-y-2 text-slate-400">
-            <li>Email: support@govtjobfinder.in</li>
+            <li>Email: support@zeebu.in</li>
             <li>Help Center</li>
             <li>Terms of Service</li>
           </ul>

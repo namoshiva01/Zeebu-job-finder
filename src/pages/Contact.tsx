@@ -45,7 +45,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Email Us</h4>
-                  <p className="text-slate-600">support@govtjobfinder.in</p>
+                  <p className="text-slate-600">support@zeebu.in</p>
                   <p className="text-slate-600 text-sm mt-1">We usually respond within 24 hours.</p>
                 </div>
               </div>
