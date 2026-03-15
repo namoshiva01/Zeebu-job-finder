@@ -5,20 +5,16 @@ import { APP_NAME, PLAY_STORE_URL } from '../constants';
 import { useRef } from 'react';
 
 export const Home = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
+  const { scrollYProgress } = useScroll();
 
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
+  const scale = useTransform(scrollYProgress, [0, 0.1], [1, 0.9]);
+  const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
 
   const springScale = useSpring(scale, { stiffness: 100, damping: 30 });
 
   return (
-    <div ref={containerRef} className="mesh-gradient min-h-screen overflow-hidden">
+    <div className="mesh-gradient min-h-screen">
       <SEO 
         title={`${APP_NAME} - Premium Government Job Alerts`}
         description={`Experience the future of job hunting with ${APP_NAME}. Fast, reliable, and beautifully designed for the modern job seeker.`}

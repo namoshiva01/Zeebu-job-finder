@@ -55,29 +55,29 @@ const AppInstallPopup = () => {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
-        className="fixed bottom-24 md:bottom-8 left-4 right-4 md:left-auto md:right-8 z-[60] max-w-sm bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 md:p-6"
+        className="fixed bottom-24 md:bottom-8 left-4 right-4 md:left-auto md:right-8 z-[60] max-w-sm glass-card p-6 shadow-2xl"
       >
         <button 
           onClick={() => {
             setShow(false);
             localStorage.setItem('popupDismissed', 'true');
           }}
-          className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"
+          className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors"
         >
           <X size={20} />
         </button>
         <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white font-bold text-2xl">
+          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white font-bold text-2xl shadow-lg">
             Z
           </div>
           <div>
-            <h4 className="font-bold text-slate-900">Get the App</h4>
-            <p className="text-sm text-slate-600 mb-4">Never miss a government job alert again. Install our app now!</p>
+            <h4 className="font-display font-bold text-white text-lg">Get the App</h4>
+            <p className="text-sm text-white/50 mb-4 leading-relaxed">Never miss a government job alert again. Install our app now!</p>
             <a 
               href={PLAY_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary py-2 text-sm w-full"
+              className="btn-primary py-2.5 text-sm w-full"
             >
               <Download size={16} />
               Get It Now
