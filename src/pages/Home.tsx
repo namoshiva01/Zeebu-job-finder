@@ -1,29 +1,22 @@
-import { motion, useScroll, useTransform, useSpring } from 'motion/react';
-import { Download, Bell, Shield, Smartphone, ArrowRight, Zap, Globe, Users, Search, MapPin, ShieldCheck } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Download, Bell, Smartphone, ArrowRight, Zap, Globe, Users, ShieldCheck } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { APP_NAME, PLAY_STORE_URL } from '../constants';
-import { useRef } from 'react';
 
 export const Home = () => {
-  const { scrollYProgress } = useScroll();
-
-  const scale = useTransform(scrollYProgress, [0, 0.1], [1, 0.9]);
-  const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
-
-  const springScale = useSpring(scale, { stiffness: 100, damping: 30 });
-
   return (
-    <div className="mesh-gradient min-h-screen">
+    <div className="mesh-gradient min-h-screen relative z-10">
       <SEO 
         title={`${APP_NAME} - Premium Government Job Alerts`}
         description={`Experience the future of job hunting with ${APP_NAME}. Fast, reliable, and beautifully designed for the modern job seeker.`}
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
+      <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20">
         <motion.div 
-          style={{ scale: springScale, opacity, y }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           className="section-padding text-center z-10"
         >
           <motion.div
@@ -36,32 +29,17 @@ export const Home = () => {
             <span className="text-sm font-medium text-white/70 tracking-wider uppercase">Trusted by 1M+ Job Seekers</span>
           </motion.div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight"
-          >
+          <h1 className="text-6xl md:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight">
             Find Your Future <br />
             <span className="text-accent-gradient">With Precision.</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed"
-          >
+          <p className="text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
             The most advanced government job notification platform in India. 
             Real-time alerts, qualification-based matching, and a seamless experience.
-          </motion.p>
+          </p>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-primary group">
               <Download size={20} className="group-hover:translate-y-1 transition-transform" />
               Download for Android
@@ -70,7 +48,7 @@ export const Home = () => {
               Explore Features
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Background Decorative Elements */}
@@ -110,7 +88,7 @@ export const Home = () => {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
@@ -129,7 +107,7 @@ export const Home = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             className="text-4xl md:text-6xl font-display font-bold mb-6"
           >
             Engineered for <span className="text-accent-gradient">Speed.</span>
@@ -137,7 +115,7 @@ export const Home = () => {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             className="text-white/50 text-xl max-w-2xl mx-auto"
           >
             We've rebuilt the job search experience from the ground up. 
@@ -215,9 +193,9 @@ export const Home = () => {
       {/* CTA Section */}
       <section className="section-padding relative">
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           className="glass-card text-center py-20 relative overflow-hidden"
         >
           <div className="relative z-10">
