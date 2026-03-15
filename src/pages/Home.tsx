@@ -83,12 +83,12 @@ export const Home = () => {
       <section className="bg-slate-900 text-white">
         <div className="section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">The AI Advantage</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Choose {APP_NAME}?</h2>
             <div className="space-y-6">
               {[
-                { title: "Smart Profile Scoring", desc: `${APP_NAME} AI scores your profile against job requirements, helping you focus on the right opportunities.` },
-                { title: "Next-Gen Notification Engine", desc: "Our proprietary AI engine processes 10,000+ sources daily to bring you alerts faster than any other app." },
-                { title: "Intelligent Career Pathing", desc: "Not sure where to apply? Our AI suggests career paths based on current government hiring trends." }
+                { title: "Fastest Notifications", desc: "Our engine processes thousands of sources daily to bring you alerts faster than any other platform." },
+                { title: "100% Verified Data", desc: "Every job detail is cross-checked with official government gazettes and websites for absolute accuracy." },
+                { title: "User-Friendly Interface", desc: "Designed for simplicity. No clutter, no confusing menus—just the jobs you need." }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent flex items-center justify-center mt-1">
