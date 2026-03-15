@@ -5,36 +5,31 @@ import { APP_NAME, PLAY_STORE_URL } from '../constants';
 
 export const Home = () => {
   return (
-    <div className="mesh-gradient min-h-screen relative z-10">
+    <div className="mesh-gradient min-h-screen relative">
       <SEO 
         title={`${APP_NAME} - Premium Government Job Alerts`}
         description={`Experience the future of job hunting with ${APP_NAME}. Fast, reliable, and beautifully designed for the modern job seeker.`}
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="section-padding text-center z-10"
-        >
+      <section className="relative min-h-[80vh] flex items-center justify-center pt-32 pb-20 z-10">
+        <div className="section-padding text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-sm font-medium text-white/70 tracking-wider uppercase">Trusted by 1M+ Job Seekers</span>
           </motion.div>
 
-          <h1 className="text-6xl md:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight">
+          <h1 className="text-5xl md:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight text-white">
             Find Your Future <br />
             <span className="text-accent-gradient">With Precision.</span>
           </h1>
 
-          <p className="text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
             The most advanced government job notification platform in India. 
             Real-time alerts, qualification-based matching, and a seamless experience.
           </p>
@@ -49,7 +44,7 @@ export const Home = () => {
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -84,18 +79,14 @@ export const Home = () => {
               { label: "States Covered", value: "28", icon: <Globe className="text-blue-400" /> },
               { label: "Success Rate", value: "99%", icon: <ShieldCheck className="text-emerald-400" /> },
             ].map((stat, i) => (
-              <motion.div 
+              <div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
                 <div className="flex justify-center mb-4">{stat.icon}</div>
                 <div className="text-4xl font-display font-bold mb-2">{stat.value}</div>
                 <div className="text-white/40 text-sm uppercase tracking-widest">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -104,23 +95,13 @@ export const Home = () => {
       {/* Features Bento Grid */}
       <section className="section-padding">
         <div className="text-center mb-20">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="text-4xl md:text-6xl font-display font-bold mb-6"
-          >
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
             Engineered for <span className="text-accent-gradient">Speed.</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="text-white/50 text-xl max-w-2xl mx-auto"
-          >
+          </h2>
+          <p className="text-white/50 text-xl max-w-2xl mx-auto">
             We've rebuilt the job search experience from the ground up. 
             No fluff, just the data you need, when you need it.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
