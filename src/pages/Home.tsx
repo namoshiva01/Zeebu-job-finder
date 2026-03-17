@@ -4,8 +4,7 @@ import { APP_NAME, PLAY_STORE_URL } from '../constants';
 
 export const Home = () => {
   return (
-    <div className="min-h-screen relative bg-[#050505]">
-      <div className="bg-mesh" />
+    <div className="min-h-screen relative">
       <SEO 
         title={`${APP_NAME} - Premium Government Job Alerts`}
         description={`Experience the future of job hunting with ${APP_NAME}. Fast, reliable, and beautifully designed for the modern job seeker.`}
@@ -21,7 +20,7 @@ export const Home = () => {
 
           <h1 className="text-5xl md:text-8xl font-display font-bold mb-8 leading-[1.1] tracking-tight text-white">
             Find Your Future <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0066FF] to-[#00F0FF]">With Precision.</span>
+            <span className="text-accent-gradient">With Precision.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">

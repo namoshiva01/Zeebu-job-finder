@@ -5,18 +5,14 @@ import { APP_NAME } from '../constants';
 
 export const About = () => {
   return (
-    <div className="mesh-gradient min-h-screen pt-24">
+    <div className="min-h-screen pt-24">
       <SEO 
         title={`About Us - ${APP_NAME}`}
         description={`${APP_NAME} is a smart mobile application designed to help job seekers easily find the latest government job notifications across India.`}
       />
 
       <section className="section-padding text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <div>
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 tracking-tight">
             Our Story. <br />
             <span className="text-accent-gradient">Our Mission.</span>
@@ -26,7 +22,7 @@ export const About = () => {
             shouldn't be a full-time job in itself. We built a platform that brings clarity 
             to the complex world of public sector opportunities.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       <section className="section-padding">
@@ -48,12 +44,8 @@ export const About = () => {
               desc: "100% verified data from official government sources. No rumors, just facts." 
             }
           ].map((item, i) => (
-            <motion.div 
+            <div 
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
               className="glass-card text-center"
             >
               <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-8">
@@ -61,7 +53,7 @@ export const About = () => {
               </div>
               <h3 className="text-2xl font-display font-bold mb-4">{item.title}</h3>
               <p className="text-white/40 leading-relaxed">{item.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
@@ -99,17 +91,16 @@ export const About = () => {
               desc: "Filter jobs by state, qualification, department, and category." 
             }
           ].map((v, i) => (
-            <motion.div 
+            <div 
               key={i}
-              whileHover={{ y: -5 }}
-              className="glass-card"
+              className="glass-card hover:translate-y-[-5px] transition-transform"
             >
               <div className="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center mb-6">
                 {v.icon}
               </div>
               <h3 className="text-xl font-display font-bold mb-3">{v.title}</h3>
               <p className="text-white/40">{v.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>

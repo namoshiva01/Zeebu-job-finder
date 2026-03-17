@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { Mail, MessageSquare, Send, MapPin, Phone } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { APP_NAME } from '../constants';
@@ -13,17 +12,14 @@ export const Contact = () => {
   };
 
   return (
-    <div className="mesh-gradient min-h-screen pt-24">
+    <div className="min-h-screen pt-24">
       <SEO 
         title={`Contact Us - ${APP_NAME}`}
         description={`Have questions or feedback about ${APP_NAME}? Get in touch with our support team.`}
       />
 
       <section className="section-padding text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+        <div>
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 tracking-tight">
             Let's <span className="text-accent-gradient">Connect.</span>
           </h1>
@@ -31,16 +27,12 @@ export const Contact = () => {
             Have a question or want to partner with us? Our team is ready to help you navigate 
             the future of job discovery.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       <section className="section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="text-3xl font-display font-bold mb-12">Contact Details</h2>
             <div className="space-y-10">
               <div className="flex gap-6">
@@ -82,23 +74,14 @@ export const Contact = () => {
                 affiliated with any government department. For real-time alerts, please use our mobile app.
               </p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-10"
-          >
+          <div className="glass-card p-10">
             {submitted ? (
               <div className="text-center py-20">
-                <motion.div 
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-8 border border-emerald-500/30"
-                >
+                <div className="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-8 border border-emerald-500/30">
                   <Send size={36} />
-                </motion.div>
+                </div>
                 <h3 className="text-3xl font-display font-bold mb-4">Message Sent!</h3>
                 <p className="text-white/40 text-lg">Thank you for reaching out. We'll get back to you soon.</p>
                 <button 
@@ -142,7 +125,7 @@ export const Contact = () => {
                 </button>
               </form>
             )}
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
