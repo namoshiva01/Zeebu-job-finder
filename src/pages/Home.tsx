@@ -71,10 +71,7 @@ export const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden">
-        <motion.div 
-          style={{ scale, opacity }}
-          className="max-w-7xl mx-auto px-6 text-center relative z-10"
-        >
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -118,33 +115,25 @@ export const Home = () => {
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.8, type: "spring", stiffness: 100 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
-            <MagneticButton className="inline-block">
-              <motion.a 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href={PLAY_STORE_URL} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary text-xl px-12 py-6"
-              >
-                <Download size={24} />
-                Download for Android
-              </motion.a>
-            </MagneticButton>
-            <MagneticButton className="inline-block">
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-glass text-xl px-12 py-6"
-              >
-                Explore Features
-                <ArrowRight size={24} />
-              </motion.button>
-            </MagneticButton>
+            <a 
+              href={PLAY_STORE_URL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-primary text-base"
+            >
+              <Download size={20} />
+              Download for Android
+            </a>
+            <button 
+              className="btn-secondary text-base"
+            >
+              Explore Features
+              <ArrowRight size={20} />
+            </button>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Floating Decorative Elements */}
         <motion.div 
@@ -419,17 +408,15 @@ export const Home = () => {
               Join thousands of successful candidates who found their dream job through {APP_NAME}.
             </motion.p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
-              <motion.a 
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
+              <a 
                 href={PLAY_STORE_URL} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-white text-slate-900 px-16 py-8 rounded-full font-bold text-2xl shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:bg-slate-50 transition-colors flex items-center gap-4"
+                className="btn-primary text-2xl px-16 py-8 rounded-3xl"
               >
-                <Download size={28} />
+                <Download size={32} />
                 Get Started for Free
-              </motion.a>
+              </a>
             </div>
           </div>
           

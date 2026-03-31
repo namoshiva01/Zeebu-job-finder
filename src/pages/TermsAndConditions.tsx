@@ -96,7 +96,7 @@ export const TermsAndConditions = () => {
           <div className="mb-16">
             <h2 className="text-4xl font-display font-bold text-slate-900 mb-6 tracking-tight">8. Contact Us</h2>
             <p className="text-slate-500 leading-relaxed text-xl font-light">
-              If you have any questions about these Terms and Conditions, please contact us at support@zeebu.app.
+              If you have any questions about these Terms and Conditions, please contact us at support@zeebujobs.com.
             </p>
           </div>
         </motion.div>

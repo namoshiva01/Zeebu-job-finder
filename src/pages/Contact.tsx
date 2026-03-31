@@ -62,9 +62,8 @@ export const Contact = () => {
 
             <div className="space-y-8">
               {[
-                { icon: <Mail />, label: "Email Us", value: "support@zeebu.app", color: "text-primary" },
-                { icon: <Phone />, label: "Call Us", value: "+91 98765 43210", color: "text-accent" },
-                { icon: <MapPin />, label: "Visit Us", value: "Cyber Hub, Gurugram, India", color: "text-success" },
+                { icon: <Mail />, label: "Email Us", value: "support@zeebujobs.com", color: "text-primary" },
+                { icon: <MapPin />, label: "Visit Us", value: "Hyderabad, India", color: "text-success" },
                 { icon: <Globe />, label: "Social", value: "@zeebuapp", color: "text-emerald-500" }
               ].map((item, i) => (
                 <motion.div 
@@ -168,25 +167,21 @@ export const Contact = () => {
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 outline-none focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all text-slate-900 resize-none"
                     />
                   </div>
-                  <MagneticButton>
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      disabled={formState === 'submitting'}
-                      className="btn-primary w-full py-5 text-xl relative overflow-hidden group"
-                    >
-                      <span className="relative z-10 flex items-center justify-center gap-3">
-                        {formState === 'submitting' ? (
-                          <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        ) : (
-                          <>
-                            Send Message
-                            <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                          </>
-                        )}
-                      </span>
-                    </motion.button>
-                  </MagneticButton>
+                  <button
+                    disabled={formState === 'submitting'}
+                    className="btn-primary w-full py-5 text-xl relative overflow-hidden group"
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      {formState === 'submitting' ? (
+                        <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      ) : (
+                        <>
+                          Send Message
+                          <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </>
+                      )}
+                    </span>
+                  </button>
                 </motion.form>
               )}
             </AnimatePresence>

@@ -74,7 +74,7 @@ export const PrivacyPolicy = () => {
 
           <h2 className="text-4xl font-display font-bold text-slate-900 mt-16 mb-8 tracking-tight">5. Contact Us</h2>
           <p className="text-slate-500 mb-12 leading-relaxed font-light">
-            If you have any questions about this Privacy Policy, please contact us at support@zeebu.app.
+            If you have any questions about this Privacy Policy, please contact us at support@zeebujobs.com.
           </p>
         </motion.div>
       </section>

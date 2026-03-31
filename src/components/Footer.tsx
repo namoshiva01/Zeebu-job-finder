@@ -77,15 +77,15 @@ export const Footer = () => {
           <h4 className="font-display font-bold text-xl mb-8 text-slate-900">Support</h4>
           <ul className="space-y-5 text-slate-500 font-light text-lg">
             <li>
-              <a href="mailto:support@zeebu.app" className="hover:text-primary transition-colors flex flex-col">
+              <a href="mailto:support@zeebujobs.com" className="hover:text-primary transition-colors flex flex-col">
                 <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Email Us</span>
-                support@zeebu.app
+                support@zeebujobs.com
               </a>
             </li>
             <li>
               <div className="flex flex-col">
                 <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Location</span>
-                Gurugram, Haryana, India
+                Hyderabad, Telangana, India
               </div>
             </li>
           </ul>

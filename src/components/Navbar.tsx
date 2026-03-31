@@ -82,19 +82,15 @@ export const Navbar = () => {
                 </Link>
               );
             })}
-            <MagneticButton>
-              <motion.a 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary !px-8 !py-3.5 !text-sm shadow-[0_10px_30px_rgba(37,99,235,0.2)]"
-              >
-                <Download size={18} />
-                Get App
-              </motion.a>
-            </MagneticButton>
+            <a 
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary !px-8 !py-3.5 !text-sm shadow-[0_10px_30px_rgba(37,99,235,0.2)]"
+            >
+              <Download size={18} />
+              Get App
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
